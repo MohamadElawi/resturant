@@ -1,0 +1,92 @@
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Password Reset Language Lines
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines are the default lines which match reasons
+    | that are given by the password broker for a password update attempt
+    | has failed, such as for an invalid token or invalid new password.
+    |
+    */
+
+    "Employee Registration"=>'تسجيل عامل ',
+    "Employee Name" => 'اسم العامل',
+    "Employee Namber" => 'رقم الموظف',
+    "Employee Salary" => 'راتب الموظف',
+    "Employee Experience" =>'خبرات الموظف',
+    "Send"=> 'ارسال',
+    "Enter Your Name"=>'ادخل الاسم ',
+    "Enter Your Number"=> 'ادخل الرقم ',
+    "Enter Your Salary"=> 'ادخل الراتب ',
+    "Enter Your experience"=> 'ادخل خبراتك ',
+    "Home"=>'الصفحة الرئيسية',
+    "back"=>'تراجع' ,
+    "Edit Employee"=> 'تعديل العامل',
+    "Update"=>'تحديث',
+    "Updated successfully"=>'تم التحديث بنجاح',
+    "Infomation Employee"=>'معلومات العمال',
+    "operation"=>'العمليات',
+    "Add"=>'اضافة ',
+    "Edit"=>'تعديل',
+    "Delete"=>'حذف',
+    "Sorry, employee is not available"=>'عذرا ,العامل غير متاح',
+    "Deleted successfully"=>'تم الحذف بنجاح',
+    "operation"=>'العمليات',
+    "Edit premission"=>'تعديل الصلاحية',
+    "User Phone"=>'رقم المستخدم',
+    "User Email"=>'البريد الالكتروني',
+    "User Name"=>'اسم المستخدم',
+    "Information User"=>'معلومات المستخدمين',
+    "premission"=>'الصلاحية',
+    "Admin"=>'مسؤول',
+    "Chef"=>'طباخ',
+    "User"=>'مستخدم',
+    "User Edit"=>'تعديل المستخدم ',
+    "Customers Requests"=>'طلبات الزبائن',
+    "Name Customer"=>'اسم الزبون',
+    "phone Customer"=>'هاتف الزبون',
+    "veiw order"=>'عرض الطلبات',
+    "customer order"=>'طلبات الزبائن',
+    "Client Name"=>'اسم الزبون',
+    "Enter Client Number"=>'ادخل اسم الزبون',
+    "Client Number"=>'هاتف الزبون',
+    "Enter Client Number"=>'ادخل هاتف الزبون',
+    "Chose Meals"=>'اختر الوجبات',
+    "price"=>'السعر',
+    "Choose drinks"=>'اختر المشروبات',
+    "total price is"=>'السعر الكلي',
+    "request name"=>'اسم الطلب',
+    "Customers order"=>'طبات الزبون',
+    "Sorry, user is not available"=>'عذرا , المستخدم غير موجود',
+    "Add successfully"=>'تمت الاضافة بنجاح ',
+    "Update profile"=>'تعديل الملف الشخصي',
+    "Update details"=>'تعديل التفاصيل',
+    "phone"=>'رقم الهاتف',
+    "E-Mail Address"=>'البريد الالكتروني',
+    "Name"=>'الاسم',
+    "User type"=>'صفة المستخدم',
+    "Change Password"=>'تغير كلمة السر',
+    "Current Password"=>'كلمة السر الحالية',
+    "New Password"=>'كلمة السر الجديدة',
+    "Confirm Password"=>'نأكيد كلمة السر',
+    "Update Password"=>'تحديث',
+    "Your Password Have Been Update"=>'تم تحديث كلمة السر',
+    "the entered does not match your current password"=>'كلمة السر المدخلة غير مطابقة للكلمة الحالية',
+    "Dashboard"=>'لوحة التحكم',
+    "You are logged in"=>'You are logged in',
+    "Request Food"=>'طلب طعام',
+    "You are chef logged in"=>'تم تسجيل الدخول كطباخ',
+    "Add Meal"=>'اضافة وجبة',
+    "Add Drink"=>'اضافة مشروب',
+    "view Meals"=>'عرض الوجبات',
+    "view Drinks"=>'عرض المشروبات',
+    "View Order"=>'عرض الطلبات',
+    "Users"=>'المستحدمين',
+    "Employees"=>'الموظفين',
+    "You are admins logged in"=>'تم تسجيل الدخول كمسؤول',
+
+];
