@@ -31,7 +31,7 @@ class EmployeeRequest extends FormRequest
         ]; 
     }
 
-    public function message(){
+    public function messages(){
         return [
             'name.required'=>'يجب ادخال الاسم',
             'name.max:25'=>'الاسم كبير جدا ',

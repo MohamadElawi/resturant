@@ -14,7 +14,7 @@ return [
     */
 
     "mohamad" => 'mohamad',
-    "Employee Registration"=>'Employee ',
+    "Employee Registration"=> 'Add Employee',
     "Employee Name" => 'Employee Name',
     "Employee Namber" => 'Employee Namber',
     "Employee Salary" => 'Employee Salary',

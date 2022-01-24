@@ -11,7 +11,7 @@ class customer extends Model
     protected $Tables = "customers" ;
     protected $fillable =['name','number'];
     protected $hidden =[];
-    public $timestamps =false;
+    public $timestamps =true;
 
     public function drinks()
         {

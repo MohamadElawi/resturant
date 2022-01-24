@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Mhd extends Migration
+class CreateCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,13 @@ class Mhd extends Migration
      * @return void
      */
     public function up()
-    {   
-       Schema::create('mhd', function (Blueprint $table) {
-        $table->bigIncrements('id');
-        $table->string('name')->nullable();
-        $table->string ('lastName');
-        $table->integer('number');
-       }); 
-        
+    {
+        Schema::create('customers', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->integer('number');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -29,6 +28,6 @@ class Mhd extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('customers');
     }
 }

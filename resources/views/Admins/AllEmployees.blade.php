@@ -142,7 +142,7 @@
                     <td>{{$employee ->experience}}</td>
                     <td>{{$employee ->salary}}</td>
 
-                         <td><a href='{{route('create')}}' class='btn btn-primary'>{{__('messages.Add')}}</a>
+                         <td><a href='{{route('employee.create')}}' class='btn btn-primary'>{{__('messages.Add')}}</a>
                              <a href="{{route('employee.edit',$employee ->id)}}" class='btn btn-success'>{{__('messages.Edit')}}</a>
                              <a href='{{route('employee.delete',$employee ->id)}}' class='btn btn-danger'>{{__('messages.Delete')}}</a>
                             </td> 

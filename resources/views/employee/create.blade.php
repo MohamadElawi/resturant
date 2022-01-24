@@ -42,7 +42,6 @@
 
             .content {
                 text-align: center;
-                background-image: url("/img/about.jpg");
                 background-size: cover;
                
                 
@@ -132,7 +131,7 @@
                     {{Session::get('success')}}
                 </div>
              @endif 
-             {{-- <img class ="img" src= "/img/about.jpg" > --}}
+           
             <form method="post" action="{{Route('employee.store')}}">
                     @csrf
                     <div class="form-group">

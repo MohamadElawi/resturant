@@ -30,6 +30,7 @@
                   
                    {{__('messages.You are admins logged in')}}!<br><br>
                         <a href="{{route('Get.All.Employee')}}" class="btn btn-light">{{__('messages.Employees')}}</a><br>
+                        <a href="{{route('employee.create')}}" class="btn btn-light">{{__('messages.Employee Registration')}}</a><br>
                         <a href="{{route('all.users')}}" class="btn btn-light">{{__('messages.Users')}}</a><br>
                         <a href="{{route('Get.All.Order')}}" class="btn btn-light">   {{__('messages.View Order')}}     </a><br>
                        

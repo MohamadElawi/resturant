@@ -1,18 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-setcookie("login","channel",time()+86400 ,"/",true,true);
-
 
 Route::get('/', function () {
     return view('index');
@@ -35,62 +22,53 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
 
     Route::get('home/chef', 'HomeController@indexChef')->name('home.chef')->middleware('auth','chef');
 
+################## employee ################
 
-
-    Route::group(['prefix'=>'employee','middleware'=>['auth','admin']],function(){
+    Route::group(['prefix'=>'employee','namespace'=>'Admin','middleware'=>['auth','admin']],function(){
    
 
-        Route::get('create','firstcontroller@create' )->name('create');
-        Route::post('store',  'firstcontroller@store')->name('employee.store');
+        Route::get('create','EmployeeController@create' )->name('employee.create');
+        Route::post('store',  'EmployeeController@store')->name('employee.store');
+        Route::get('allEmployee','EmployeeController@GetAllEmployee' )->name('Get.All.Employee');
+
+        Route::get('edit/{employee_id}','EmployeeController@EmployeeEdit' )->name('employee.edit');
+        Route::post('Update/{employee_id}','EmployeeController@EmployeeUpdate' )->name('employee.Update');
+    
+        Route::get('delete/{employee_id}', 'EmployeeController@EmployeeDelete')->name('employee.delete');
     });
     
-
-
-
-
-Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']],function(){
-   
-    
-
-    Route::get('allEmployee','Admincontroller@GetAllEmployee' )->name('Get.All.Employee');
-
-    Route::get('editEmployee/{employee_id}','Admincontroller@EmployeeEdit' )->name('employee.edit');
-    Route::post('UpdateEmployee/{employee_id}','Admincontroller@EmployeeUpdate' )->name('employee.Update');
-
-    Route::get('deleteEmployee/{employee_id}', 'Admincontroller@EmployeeDelete')->name('employee.delete');
-    
-   // Route::get('page', 'Admincontroller@Admin_page')->name('admin.page');
-});
-
+########### order #############
 
 Route::group(['namespace'=>'admin'],function () {
     
-    Route::get('SetMEalsDrinks', 'admincontroller@setMealsDrinks')->name('Maels.drinks')->middleware('auth');
+    Route::get('SetMEalsDrinks', 'OrderController@setMealsDrinks')->name('Maels.drinks')->middleware('auth');
     
-    Route::post('save_Order', 'admincontroller@saveOrder')->name('save.order.customer')->middleware('auth');
+    Route::post('save_Order', 'OrderController@saveOrder')->name('save.order.customer')->middleware('auth');
     
-    Route::get('order/{customer_id}','admincontroller@order')->name('order');
+    Route::get('order/{customer_id}','OrderController@order')->name('order');
     
-    Route::get('get-All-Order','admincontroller@GetAllOrder' )->name('Get.All.Order')->middleware('auth','chef');
+    Route::get('get-All-Order','OrderController@GetAllOrder' )->name('Get.All.Order')->middleware('auth','chef');
     
-    Route::get('ViewOrder', 'admincontroller@GetAllOrder')->name('View.order');
+    Route::get('ViewOrder', 'OrderController@GetAllOrder')->name('View.order');
     
-    Route::get('orderMeals/{AllCustomer_id}','admincontroller@viewOrderMeals')->name('order.meals');
+    Route::get('orderMeals/{AllCustomer_id}','OrderController@viewOrderMeals')->name('order.meals');
     
     
     });
 
+    ############## edit user by admin ###########
 
+    Route::group(['namespace'=>'Admin','middleware'=>['auth','admin']],function(){
+    Route::get('GetAllUsers', 'admincontroller@GetAllUser')->name('all.users');
 
-    Route::get('GetAllUsers', 'Admin\admincontroller@GetAllUser')->name('all.users')->middleware('auth','admin');
+    Route::get('/delete/User/{user_id}', 'admincontroller@deleteUser')->name('delete.user');
 
-    Route::get('deleteUser/{user_id}', 'Admin\admincontroller@deleteUser')->name('delete.user');
+    Route::get('/edit/user/{user_id}', 'admincontroller@EditUser')->name('edit.user');
 
-    Route::get('/edit/user/{user_id}', 'Admin\admincontroller@EditUser')->name('edit.user');
+    Route::post('/update/user/{user_id}', 'admincontroller@UpdateUser')->name('update.user');
 
-    Route::post('/update/user/{user_id}', 'Admin\admincontroller@UpdateUser')->name('update.user');
-
-
+});
+    ###########  user profile operation ###########
 
     Route::group(['namespace'=>'Admin'],function(){
 
@@ -106,7 +84,7 @@ Route::group(['namespace'=>'admin'],function () {
 });
     
 
-    ##############################################
+    ####################### views #######################
 
     Route::view('about/res', 'front/about')->name('about.resturant');
    
@@ -120,12 +98,14 @@ Route::group(['namespace'=>'admin'],function () {
 
      Route::view('Team/res', 'front/Team')->name('Team.resturant');
 
-     ROUTE::post('/booking','form_html@show')->name('booking');
+     Route::post('/booking','form_html@show')->name('booking');
 
-     ROUTE::get('/getdata','form_html@getdata')->name('getdata');
+     Route::get('/getdata','form_html@getdata')->name('getdata');
 
+    ########### meals and drinks ##################
 
 Route::group(['namespace'=>'Admin','middleware'=>['auth','chef']],function () {
+
     Route::get('add/meal', 'chefController@Add_meal')->name('add.meal');
 
     Route::post('save/meal', 'chefController@save_meal')->name('meal.store');
